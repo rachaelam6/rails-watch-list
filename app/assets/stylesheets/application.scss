@@ -1,3 +1,4 @@
+
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
@@ -10,3 +11,111 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+// Custom Styles for index.html.erb
+
+.cover .text-white {
+  padding: 20px;
+}
+
+.cover h1 {
+  font-family: $font-primary;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.cover h3.typed-js {
+  font-family: $font-primary;
+  font-size: 24px;
+}
+
+.container {
+  background-color: $light-gray;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.container .mb-3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container .mb-3 h3 {
+  font-family: $font-primary;
+  font-size: 24px;
+  margin: 0;
+}
+
+.container .btn {
+  color: $white;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+.row .col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.row .col-sm-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.row .col-md-4 {
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+}
+
+.card-category {
+  background-color: $white;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card-category:hover {
+  transform: translateY(-5px);
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+/* Custom Styles for new.html.erb */
+
+.new-list-container {
+  background-color: hotpink;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.new-list-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom Styles for _modal.html.erb */
+
+.modal-content {
+  background-color: hotpink;
+}
+
+.modal-body {
+  margin-bottom: 30px;
+}
+
+.modal-body label {
+  margin-bottom: 10px;
+}
+
+.modal-footer {
+  justify-content: space-between;
+}

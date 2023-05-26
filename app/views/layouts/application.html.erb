@@ -8,9 +8,17 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <style>
+  .banner {
+    background-image: url('https://mir-s3-cdn-cf.behance.net/81aa3644ba02ce4fbc9cc4f8c979a2be/f45240fb-1d7b-4a60-8ff2-18960a36ba99_rwc_0x2974x3851x639x3851.jpg?h=74084481f4b7a996f3e2e6f94a73c61a');
+    background-size: cover;
+    background-position: center;
+  }
+</style>
   </head>
 
-  <body>
+  <body class=banner>
     <%= yield %>
   </body>
 </html>

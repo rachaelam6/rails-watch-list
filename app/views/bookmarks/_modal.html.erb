@@ -1,0 +1,60 @@
+<div class="modal fade" id="new_movie_modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add a movie to your <%= list.name %> list</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+
+      <%= simple_form_for [list, bookmark] do |f| %>
+        <div class="modal-body">
+          <%= f.association :movie, collection: Movie.all.order(:title), prompt: "Select a movie", input_html: { data: { controller: "tom-select" } } %>
+          <%= f.input :comment, placeholder: "Enter a comment about the movie" %>
+        </div>
+        <div class="modal-footer">
+          <%= f.submit "Add movie", class: "btn btn-flat text-dark" %>
+          <button type="button" class="btn btn-cancel text-dark" data-bs-dismiss="modal">Back</button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<%# <%= simple_form_for [list, bookmark] do |f| %>
+<%# This line generates an HTML form using the simple_form_for helper method.
+The form is associated with the list and bookmark objects.
+The do |f| part defines a form builder object as f, which is used to generate form fields. %>
+
+<%# <div class="modal-body">
+This line starts a <div> container with a CSS class of "modal-body".
+It defines the body section of a modal, which typically contains the content of the modal. %>
+
+<%# <%= f.association :movie, collection: Movie.all.order(:title),
+prompt: "Select a movie", input_html: { data: { controller: "tom-select" } } %>
+<%# This line generates an input field for the movie association of the bookmark object.
+The association method is provided by the simple_form gem.
+It generates a select input field based on the association between bookmark and movie models. %>
+
+<%# collection: Movie.all.order(:title)
+specifies the collection of movies to populate the select field. It retrieves all movies from the Movie model and orders them by title. %>
+
+<%# prompt: "Select a movie" sets the default prompt text for the select field.
+
+input_html: { data: { controller: "tom-select" } }
+adds HTML attributes to the select field. In this case, it sets the data-controller attribute to "tom-select",
+which may be a custom JavaScript controller for enhancing the select field. %>
+
+<%# <%= f.input :comment, placeholder: "Enter a comment about the movie" %>
+<%# This line generates an input field for the comment attribute of the bookmark object.
+The input method is provided by the simple_form gem. It generates an input field based on the attribute name. %>
+
+<%# <div class="modal-footer">
+This line starts a <div> container with a CSS class of "modal-footer".
+It defines the footer section of a modal, which typically contains buttons or actions related to the modal. %>
+
+<%# <%= f.submit "Add movie", class: "btn btn-flat text-dark" %>
+<%# This line generates a submit button for the form.
+The submit method is provided by the simple_form gem.
+It generates an HTML button that submits the form when clicked. %>

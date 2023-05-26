@@ -1,0 +1,33 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Add a movie to your <%= @list.name %> list</h3>
+        <%= simple_form_for [@list, @bookmark] do |f| %>
+          <%= f.input :comment, placeholder: 'Enter a comment about the movie' %>
+          <%= f.association :movie, prompt: "Select a movie", input_html: {data: { controller: "tom-select"}} %>
+          <%= f.submit class: "btn btn-flat" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%# <%= simple_form_for [@list, @bookmark] do |f| %>
+<%# This line starts a form using the simple_form_for helper method. It specifies the @list and @bookmark objects as the form's resources.
+The do |f| part defines a form builder object as f, which is used to generate form fields. %>
+
+<%# <%= f.input :comment, placeholder: 'Enter a comment about the movie' %>
+<%# This line generates an input field for the comment attribute of the @bookmark object.
+The placeholder option sets the placeholder text for the input field. %>
+
+<%# <%= f.association :movie, prompt: "Select a movie", input_html: {data: { controller: "tom-select"}} %>
+<%# This line generates a select input field for the movie association of the @bookmark object.
+The prompt option sets the default prompt text for the select field.
+The input_html option allows you to specify HTML attributes for the select field.
+In this case, it sets the data-controller attribute to "tom-select", which may be a custom JavaScript controller
+for enhancing the select field. %>
+
+<%# <%= f.submit class: "btn btn-flat" %>
+<%# This line generates a submit button for the form. The class option sets the CSS classes for the button. %>
